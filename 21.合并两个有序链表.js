@@ -18,6 +18,7 @@
  * @return {ListNode}
  */
 var mergeTwoLists = function (list1, list2) {
+    //用第三个链表接收
     let head = new ListNode(null, null)
     let node = head
 
