@@ -10,7 +10,7 @@
  * @return {number}
  */
 var mySqrt = function (x) {
-    // 二分法
+    // 二分法，挨个查找
     let left = 0, right = x;
     while (left <= right) {
         let mid = left + ((right - left) >> 1);

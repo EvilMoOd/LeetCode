@@ -10,7 +10,7 @@
  * @return {number}
  */
 var singleNumber = function (nums) {
-    //异或消消乐
+    //位运算，异或消消乐
     let result = 0
     for (let i = 0, j = nums.length; i < j; i++) {
         result ^= nums[i]

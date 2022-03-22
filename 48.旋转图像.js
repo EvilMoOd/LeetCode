@@ -10,6 +10,7 @@
  * @return {void} Do not return anything, modify matrix in-place instead.
  */
 var rotate = function (matrix) {
+    //两次对称
     for (let i = 0; i < matrix.length / 2; i++) {
         let temp = matrix[i]
         matrix[i] = matrix[matrix.length - 1 - i]

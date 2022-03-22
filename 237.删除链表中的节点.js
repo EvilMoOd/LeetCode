@@ -17,6 +17,7 @@
  * @return {void} Do not return anything, modify node in-place instead.
  */
 var deleteNode = function(node) {
+    //成为他，杀掉他
     node.val = node.next.val
     node.next = node.next.next
 };
