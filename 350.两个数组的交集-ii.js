@@ -11,6 +11,7 @@
  * @return {number[]}
  */
 var intersect = function (nums1, nums2) {
+    //用map记录数据以及个数，然后比较map
     let arr = []
     let map = {}
     for (const i of nums1) {

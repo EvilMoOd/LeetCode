@@ -11,14 +11,14 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-    //比较相减后的数在keys中存在不存在，存在则返回索引，否则存入keys
-    let keys = {}
-    for (let i = 0, j = nums.length; i < j; i++) {
+    //用map记录nums里的值，然后做差值比较，如果target-nums[i]=map里的值，则返回对应索引
+    let map = new Map();
+    for (let i = 0; i < nums.length; i++) {
         let diff = target - nums[i]
-        if (!isNaN(keys[diff])) {
-            return [keys[diff], i]
+        if (map.has(diff)) { 
+            return [map.get(diff), i]
         } else {
-            keys[nums[i]] = i
+            map.set(nums[i], i)
         }
     }
 };

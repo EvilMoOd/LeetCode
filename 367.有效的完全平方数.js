@@ -10,7 +10,7 @@
  * @return {boolean}
  */
 var isPerfectSquare = function (num) {
-    // 二分法
+    // 二分查找
     //先求其向下取整的平方根right
     let left = 0, right = num;
     while (left <= right) {

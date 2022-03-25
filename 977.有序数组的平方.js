@@ -9,8 +9,14 @@
  * @param {number[]} nums
  * @return {number[]}
  */
-var sortedSquares = function(nums) {
-
+var sortedSquares = function (nums) {
+    //双指针从两边开始，或者直接暴力解法
+    let num = []
+    for (let item of nums) {
+        num.push(item * item);
+    }
+    num.sort((a, b) => a - b)
+    return num
 };
 // @lc code=end
 
