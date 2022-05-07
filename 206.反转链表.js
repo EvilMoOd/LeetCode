@@ -18,15 +18,15 @@
  */
 var reverseList = function (head) {
     //1、双指针.2、栈。
-    let pre = null,
-        post = null;
+    let l = null,
+        r = null;
     while (head) {
-        post = head.next
-        head.next = pre
-        pre = head
-        head = post
+        r = head.next//右指针记录下一个节点
+        head.next = l//翻转链
+        l = head//左指针移动到head节点位置
+        head = r//head节点移动到右指针位置，也就是第一步记录时的head.next
     }
-    return pre
+    return l//返回首元节点
 };
 // @lc code=end
 
