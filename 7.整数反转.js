@@ -10,7 +10,7 @@
  * @return {number}
  */
 var reverse = function (x) {
-    //新变量
+    //暴力解法
     let newA = 0;
     const MAX_VALUE = Math.pow(2, 31) - 1;
     const MIN_VALUE = MAX_VALUE * -1;

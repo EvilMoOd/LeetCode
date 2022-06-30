@@ -27,5 +27,6 @@ var combine = function (n, k) {
   }
   backTracking(1, []);
   return resArr;
+  
 };
 // @lc code=end
