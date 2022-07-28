@@ -1,19 +1,12 @@
-var levelOrder = function (root) {
-  //二叉树的层序遍历
-  let res = [],
-    queue = [];
-  queue.push(root);
-  if (!root) return res;
-  while (queue.length) {
-    let level = [];
-    let len = queue.length;
-    for (let i = 0; i < len; i++) {
-      let node = queue.shift();
-      level.push(node.val);
-      node.left && queue.push(node.left);
-      node.right && queue.push(node.right);
-    }
-    res.push(level);
-  }
-  return res;
-};
+git filter-branch -f --env-filter '
+OLD_EMAIL="962475158@qq.com"
+CORRECT_NAME="EvilMoOd"
+if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_COMMITTER_NAME="$CORRECT_NAME"
+fi
+if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_AUTHOR_NAME="$CORRECT_NAME"
+fi
+' --tag-name-filter cat -- --branches --tags
