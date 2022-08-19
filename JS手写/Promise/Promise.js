@@ -1,38 +1,32 @@
 class MyPromise {
   constructor(executor) {
-    this.initBind();
-    this.initValue();
-    try {
-      executor(this.resolve, this.reject);
-    } catch (error) {}
-    this.reject(error);
-  }
-  initBind() {
-    this.resolve = this.resolve.bind(this);
-    this.reject = this.reject.bind(this);
-    this.onfulfilledList = [];
-    this.onrejectedList = [];
-  }
-  initValue() {
     this.state = 'pending';
     this.value = null;
-  }
-  resolve(value) {
-    if (this.state === 'pending') return;
-    this.state = 'fulfilled';
-    this.value = value;
-    while (this.onfulfilledList.length) {
-      this.onfulfilledList.shift()(this.value);
+    this.onfulfilledList = [];
+    this.onrejectedList = [];
+    const resolve = (value) => {
+      if (this.state !== 'pending') return;
+      this.state = 'fulfilled';
+      this.value = value;
+      while (this.onfulfilledList.length) {
+        this.onfulfilledList.shift()(this.value);
+      }
+    };
+    const reject = (error) => {
+      if (this.state !== 'pending') return;
+      this.state = 'rejected';
+      this.value = error;
+      while (this.onrejectedList.length) {
+        this.onrejectedList.shift()(this.value);
+      }
+    };
+    try {
+      executor(resolve, reject);
+    } catch (error) {
+      reject(error);
     }
   }
-  reject(error) {
-    if (this.state === 'pending') return;
-    this.state = 'rejected';
-    this.value = error;
-    while (this.onrejectedList.length) {
-      this.onrejectedList.shift()(this.value);
-    }
-  }
+
   then(onfulfilled, onrejected) {
     // 确保传入为函数
     onfulfilled =
@@ -101,7 +95,6 @@ class MyPromise {
       });
     });
   }
-
   static race(promises) {
     return new MyPromise((resolve, reject) => {
       promises.forEach((promise) => {
@@ -120,7 +113,6 @@ class MyPromise {
       });
     });
   }
-
   static any(promises) {
     let count = 0;
     return new MyPromise((resolve, reject) => {
@@ -143,7 +135,6 @@ class MyPromise {
       });
     });
   }
-
   static allSettled(promises) {
     return new Promise((resolve, reject) => {
       const result = [];

@@ -1,8 +1,6 @@
 // 方法1
 const shuffle = (arr) => {
-  return arr.sort(() => {
-    return Math.random() > 0.5 ? 1 : -1;
-  });
+  return arr.sort(() => Math.random() > 0.5 ? 1 : -1);
 };
 
 // 方法2

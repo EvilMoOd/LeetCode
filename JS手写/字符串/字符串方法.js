@@ -28,7 +28,7 @@ String.prototype._substr = function (start = 0, length) {
   return str;
 };
 // substring
-String.prototype._sunstring = function (start = 0, end) {
+String.prototype._substring = function (start = 0, end) {
   start = start < 0 ? this.length + start : start;
   end = !end && end !== 0 ? this.length : end;
 
