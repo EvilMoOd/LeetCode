@@ -19,13 +19,15 @@
  * @return {boolean}
  */
 var isSubtree = function (root, subRoot) {
-  if (root == null) return subRoot == null;
+  if (!root || !subRoot) return false;
 
   if (same(root, subRoot)) return true;
   return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);
   //比较两棵树
   function same(left, right) {
-    if (!left || !right) return left === right;
+    // if (!left || !right) return left === right;这里有缺陷，如果b完了a没完，会导致true变false
+    if (!right) return true;
+    if (!left) return false;
     return (
       left.val === right.val &&
       same(left.left, right.left) &&

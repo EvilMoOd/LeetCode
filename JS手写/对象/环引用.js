@@ -1,22 +1,19 @@
 const cycleDetector = (obj) => {
+  // 思路是递归遍历obj的每一项，将每一个对象（包括源对象）放入数组中，判断每一项是否在数组中判断是否有环
   const arr = [obj];
-  let flag = false;
 
   const cycle = (o) => {
-    const values = Object.values(o);
-    for (let value of values) {
+    for (let value of Object.values(o)) {
       if (typeof value === 'object' && value !== null) {
         if (arr.includes(value)) {
-          flag = true;
-          return;
+          return true;
         }
         arr.push(value);
         cycle(value);
       }
     }
   };
-
   cycle(obj);
 
-  return flag;
+  return false;
 };
