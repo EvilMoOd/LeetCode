@@ -26,3 +26,11 @@
 贪心
 回溯
 KMP-字符串
+
+3-21至8-21 5个月
+WakaTime时长统计
+LeetCode：47h
+Project：155h+40h
+Scotfeel：282h
+other：160h
+all: 684h

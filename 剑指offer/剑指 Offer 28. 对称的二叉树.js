@@ -11,8 +11,8 @@
  */
 var isSymmetric = function (root) {
   let same = (a, b) => {
-    if (!a || !b) return;
-    return a.val === b.val || same(a.left, b.right) || same(a.right, b.left);
+    if (!a || !b) return !a && !b;
+    return a.val === b.val && same(a.left, b.right) && same(a.right, b.left);
   };
-  return same(root);
+  return same(root,root);
 };

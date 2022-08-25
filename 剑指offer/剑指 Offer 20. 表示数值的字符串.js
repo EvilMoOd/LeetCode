@@ -3,6 +3,7 @@
  * @return {boolean}
  */
 var isNumber = function (s) {
+  // 枚举
   let i,
     len,
     numFlag = false,
@@ -15,7 +16,7 @@ var isNumber = function (s) {
     if (s[i] >= '0' && s[i] <= '9') {
       numFlag = true;
     } else if (s[i] === '.' && !dotFlag && !eFlag) {
-      // 如果是 .  那必须前面还出现过 .  且前面没出现过 e/E，因为如果前面出现过 e/E 再出现. 说明 e/E 后面跟着小数，不符合题意
+      // 如果是 .  那必须前面没出现过 .  且前面没出现过 e/E，因为如果前面出现过 e/E 再出现. 说明 e/E 后面跟着小数，不符合题意
       dotFlag = true;
     } else if ((s[i] === 'e' || s[i] === 'E') && !eFlag && numFlag) {
       // 如果是 e 或 E，那必须前面没出现过 e/E，且前面出现过数字
