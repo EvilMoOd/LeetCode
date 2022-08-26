@@ -23,18 +23,18 @@ var pathSum = function (root, targetSum) {
   let res = [],
     path = [],
     sum = 0;
-  let findPath = (root, path, sum) => {
+  let findPath = (root, sum) => {
     // 记录路径和路径的总值，作为参数往下递归
     path.push(root.val);
     sum += root.val;
     // 到叶子节点则判断sum
     if (sum === targetSum && !root.left && !root.right) res.push(path.slice());
-    root.left && findPath(root.left, path, sum);
-    root.right && findPath(root.right, path, sum);
+    root.left && findPath(root.left, sum);
+    root.right && findPath(root.right, sum);
     // 记得回溯
     path.pop();
   };
-  findPath(root, path, sum);
+  findPath(root, sum);
   return res;
 };
 // @lc code=end
