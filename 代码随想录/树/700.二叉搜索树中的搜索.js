@@ -18,8 +18,17 @@
  * @param {number} val
  * @return {TreeNode}
  */
-var searchBST = function(root, val) {
-
+var searchBST = function (root, val) {
+  let dfs = (node) => {
+    if (!node) return null;
+    if (node.val === val) {
+      return node;
+    } else if (node.val > val) {
+      return dfs(node.left);
+    } else if (node.val < val) {
+      return dfs(node.right);
+    }
+  };
+  return dfs(root)
 };
 // @lc code=end
-

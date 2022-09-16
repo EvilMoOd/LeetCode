@@ -18,7 +18,7 @@
  * @return {boolean}
  */
 var isValidBST = function (root) {
-    //1、中序遍历、递归
+    //中序遍历记录前一个值，比较是否符合二叉搜索树
     let preVal = -Infinity,
         flag = true;
     const inOrder = (root) => {
