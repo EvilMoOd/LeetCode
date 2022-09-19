@@ -27,10 +27,11 @@
 回溯
 KMP-字符串
 
-3-21至8-28 5个月1周
+3-21至9-18 6个月1周
 WakaTime时长统计
 LeetCode：70h
-Project：159h+40h
-Scotfeel：298h
-other：193h
-all: 760h
+BaiduProject：185.5h
+WmsStore：40h
+Scotfeel：326.5h
+other：208.5h
+all: 830.5h

@@ -10,7 +10,7 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 var nextPermutation = function(nums) {
-
+ 
 };
 // @lc code=end
 
