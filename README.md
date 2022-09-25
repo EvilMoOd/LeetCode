@@ -5,33 +5,67 @@
 个人力扣空间
 <https://leetcode-cn.com/u/qi-yue-chu-qi/>
 
-## 常用数据结构
+## 数据结构
 
-数组
-链表-常用虚拟头节点来遍历
-栈
-队列
-串
-表
-集
-树
-图
+存储数据的空间结构
 
-## 常用算法
+### 索引型
 
-排序
-双指针
-分治
-动态规划
-贪心
-回溯
-KMP-字符串
+#### 数组
+
+![数组.jpg](https://s2.loli.net/2022/09/24/MSkxbKRm2uvitNe.jpg)
+
+#### 字符串
+
+![字符串.jpg](https://s2.loli.net/2022/09/24/K9ANGRrcF5CiQ74.jpg)
+
+#### 表集
+
+![表集.jpg](https://s2.loli.net/2022/09/24/tReKLMyOnV74Jv9.jpg)
+
+### 辅助型
+
+#### 栈和队列
+
+![栈和队列.jpg](https://s2.loli.net/2022/09/24/oq2kEpI1OxMzegt.jpg)
+
+### 指针型
+
+#### 链表
+
+![链表.jpg](https://s2.loli.net/2022/09/24/CEyrPThoQn1LJNw.jpg)
+
+#### 树
+
+![树.jpg](https://s2.loli.net/2022/09/24/GXBRyT3YAtI7Omj.jpg)
+
+## 算法
+
+算法就是对数据的增删改查排
+
+### 回溯
+
+![回溯.jpg](https://s2.loli.net/2022/09/24/6GMj72UBADtQXYT.jpg)
+
+### 贪心
+
+![贪心.jpg](https://s2.loli.net/2022/09/24/JuaomOclb1YspkD.jpg)
+
+### 动态规划
+
+![动态规划.jpg](https://s2.loli.net/2022/09/24/rxgVkPcJbIWEBUz.jpg)
+
+## 时间记录
 
 3-21至9-18 6个月1周
 WakaTime时长统计
-LeetCode：80.5h
+实习
 BaiduProject：185.5h
-WmsStore：40h
+项目
 Scotfeel：326.5h
-other：198h
+WmsStore：40h
+学习
+LeetCode：80.5h
+other：198h（造轮子、钻研学习、看源码）
+
 all: 830.5h

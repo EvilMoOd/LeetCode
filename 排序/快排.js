@@ -1,7 +1,8 @@
 function quickSort(arr) {
   if (arr.length === 1) return arr;
-
-  let pivot = arr[Math.floor(Math.random() * arr.length)];
+  // 取轴
+  let pivot = arr[0];
+  // 分治
   let left = [],
     mid = [],
     right = [];
@@ -10,6 +11,6 @@ function quickSort(arr) {
     if (arr[i] === pivot) mid.push(array[i]);
     if (arr[i] > pivot) right.push(array[i]);
   }
-
+  // 递归
   return quickSort(left).concat(mid, quickSort(right));
 }
