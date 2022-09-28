@@ -1,10 +1,9 @@
+// 流水线函数
 const compose = (...fns) => {
   if (fns.length === 0) return (num) => num;
   if (fns.length === 1) return fns[0];
   return fns.reduce((pre, next) => {
-    return (num) => {
-      return pre(next(num));
-    };
+    return (num) => pre(next(num));
   });
 };
 // use

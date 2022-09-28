@@ -70,7 +70,7 @@ const deepClone = (target, map = new Map()) => {
 
 // 浅拷贝的实现;
 function shallowClone(object) {
-  // 只拷贝对象
+  // 只拷贝对象或数组
   if (!object || typeof object !== 'object') return;
 
   // 根据 object 的类型判断是新建一个数组还是对象

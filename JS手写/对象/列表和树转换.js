@@ -31,32 +31,29 @@ tree = [{
 
 function jsonToTree(data) {
   // 初始化结果数组，并判断输入数据的格式
-  let result = []
-  if(!Array.isArray(data)) {
-    return result
+  let res = []
+  if (!Array.isArray(data)) {
+    return res
+  } else {
+    res.push(data[0])
   }
-  // 使用map，将当前对象的id与当前对象对应存储起来
-  let map = {};
-  data.forEach(item => {
-    map[item.id] = item;
-  });
-  // 
-  data.forEach(item => {
-    let parent = map[item.pid];
-    if(parent) {
-      (parent.children || (parent.children = [])).push(item);
-    } else {
-      result.push(item);
+  let i = 1
+  const dfs = (obj) => {
+    if (i < data.length) {
+      obj.children = [data[i]]
+      i++
+      dfs(obj.children[0])
     }
-  });
-  return result;
+  }
+  dfs(res[0])
+  return res
 }
 
 function tree2json(tree) {
-  if(tree[0].children) {
+  if (tree[0].children) {
     tree.push(tree2json(tree[0].children))
     delete tree[0].children
-  }else{
+  } else {
     return tree[0]
   }
   return tree.flat()

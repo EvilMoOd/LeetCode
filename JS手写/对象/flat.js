@@ -1,22 +1,15 @@
 const flatten = (obj) => {
-  if (!isObject(obj)) return;
+  if (typeof obj !== 'object' && obj === null) return;
   const res = {};
-  const dfs = (cur, prefix) => {
-    if (isObject(cur)) {
-      if (Array.isArray(cur)) {
-        for (let i in cur) {
-          dfs(cur[i], `${prefix}[${i}]`);
-        }
+  const flat = (obj) => {
+    Object.keys(obj).forEach((key) => {
+      if (typeof obj[key] === 'object' && obj[key] !== null) {
+        flat(obj[key])
       } else {
-        for (let i in cur) {
-          dfs(cur[i], `${prefix}${prefix ? '.' : ''}${i}`);
-        }
+        res[key] = obj[key];
       }
-    } else {
-      res[prefix] = cur;
-    }
-  };
-  dfs(obj, '');
-
+    })
+  }
+  flat(obj)
   return res;
 };

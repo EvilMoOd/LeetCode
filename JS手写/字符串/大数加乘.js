@@ -1,23 +1,28 @@
 function sumBigNumber(a, b) {
-  let res = '';
-  let temp = 0;
-  
-  a = a.split('');
-  b = b.split('');
-  
-  while (a.length || b.length || temp) {
-    temp += ~~a.pop() + ~~b.pop();
-    res = (temp % 10) + res;
-    temp  = temp > 9
-  }
-  return res.replace(/^0+/, '');
+    //取两个数字的最大长度,用0去补齐长度
+    let maxLength = Math.max(a.length, b.length);
+    a = a.padStart(maxLength, 0); //"0009007199254740991"
+    b = b.padStart(maxLength, 0); //"1234567899999999999"
+    // 从个位往前加
+    let t = 0,
+        f = 0; //"进位"
+    let sum = '';
+    for (let i = maxLength - 1; i >= 0; i--) {
+        t = +a[i] + +b[i] + f;
+        f = Math.floor(t / 10);
+        sum = (t % 10) + sum; //位置别混乱，从后往前加
+    }
+    if (f === 1) {
+        sum = '1' + sum;
+    }
+    return sum;
 }
 
 function multiplyBigNum(num1, num2) {
     //判断输入是不是数字
-    if (isNaN(num1) || isNaN(num2)) return "";
-    num1 = num1 + ""
-    num2 = num2 + ""
+    if (isNaN(num1) || isNaN(num2)) return '';
+    num1 = num1 + '';
+    num2 = num2 + '';
     let len1 = num1.length,
         len2 = num2.length;
     let pos = [];
@@ -38,7 +43,7 @@ function multiplyBigNum(num1, num2) {
     }
 
     //去掉前置0
-    let result = pos.join("").replace(/^0+/, "");
+    let result = pos.join('').replace(/^0+/, '');
 
     return result - 0 || '0';
 }

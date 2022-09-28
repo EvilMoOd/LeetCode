@@ -99,13 +99,13 @@ Array.prototype._join = function (str = ',') {
   return resStr;
 };
 // flat
-Array.prototype._flat = function (num = Infinity) {
+Array.prototype._flat = function (level = Infinity) {
   let arr = this,
-    i = 0;
+    count = 0;
   while (arr.some((item) => Array.isArray(item))) {
     arr = [].concat(...arr);
-    i++;
-    if (i >= num) break;
+    count++;
+    if (count === level) break;
   }
   return arr;
 };

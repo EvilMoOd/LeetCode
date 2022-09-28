@@ -57,15 +57,20 @@
 
 ## 时间记录
 
-3-21至9-18 6个月1周
-WakaTime时长统计
-实习
-BaiduProject：185.5h
-项目
-Scotfeel：326.5h
-WmsStore：40h
-学习
-LeetCode：80.5h
-other：198h（造轮子、钻研学习、看源码）
+### WakaTime时长统计(3-21至9-25 27周)  
 
-all: 830.5h
+#### 实习
+
+- BaiduProject：192h
+
+#### 项目
+
+- Scotfeel：330h
+- WmsStore：40h
+
+#### 学习
+
+- LeetCode：95h
+- study：204h（造轮子、钻研学习、看源码）
+
+- all: 861h
