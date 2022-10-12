@@ -40,3 +40,7 @@ String.prototype._substring = function (start = 0, end) {
 
   return str;
 };
+// trim去空格
+String.prototype._trim = function () {
+  return this.replace(/^\s+|\s+$/g, '')
+}

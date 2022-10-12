@@ -1,3 +1,5 @@
+
+
 const PENDING = 'pending';
 const FULFILLED = 'fulfilled';
 const REJECTED = 'rejected';
@@ -54,6 +56,12 @@ const _Resolve = (promise, x, resolve, reject) => {
   }
 };
 class MyPromise {
+  /*
+  构造函数
+  1、初始化三种状态以及resolve时返回的value，失败时返回的reason，两个事件队列对应resolve时执行或reject时执行
+  2、写resolve和reject的函数，promise状态不可逆所以需要判断一下当前状态，然后是状态切换以及赋结果值，执行对应的事件队列
+  3、try catch执行executor，catch直接reject即可
+  */
   constructor(executor) {
     this.status = PENDING;
     this.value = undefined;
@@ -78,13 +86,20 @@ class MyPromise {
         this.onRejectedCallbacks.forEach((callback) => callback(reason));
       }
     };
+
     try {
       executor(resolve, reject);
     } catch (error) {
       reject(error);
     }
   }
+
   then(onFulfilled, onRejected) {
+    /* 
+    1、 对三种状态做对应判断处理
+    2、 结果需要返回一个promise作为链式调用，所以我们要调用一次自己的promise函数
+    3、 用微任务api传入try catch函数，判断then第一个参数是否为函数，如果不是则直接resolve（reject）当前要返回的promise，如果是则执行它并传入value参数，该函数如果报错要catch捕获并reject
+    */
     if (this.status === FULFILLED) {
       const promise2 = new MyPromise((resolve, reject) => {
         queueMicrotask(() => {

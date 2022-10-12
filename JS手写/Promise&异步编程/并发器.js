@@ -15,13 +15,14 @@ addTask(400,"4");
 1200ms时，4任务执行完毕，输出4 */
 
 class Scheduler {
+  // 需求包括添加、开始、并发执行三个功能
   constructor(limit) {
     this.limit = limit;
     this.queue = [];
-    this.count = 0;
   }
+  // 将promise的高阶函数（惰性函数）存入队列中
   add(time, str) {
-    const request = () => {
+    const task = () => {
       return new Promise((resolve) => {
         setTimeout(() => {
           console.log(str);
@@ -29,24 +30,21 @@ class Scheduler {
         }, time);
       });
     };
-    this.queue.push(request);
+    this.queue.push(task);
   }
-  taskStart() {
+  // 按限制数执行limit个任务
+  start() {
     for (let i = 0; i < this.limit; i++) {
-      this.request();
+      this.emit();
     }
   }
-
-  request() {
-    if (!this.queue.length || this.count > this.limit) {
-      return;
-    }
-    this.count++;
+  // 执行任务并且当一个任务执行完后再执行下一个任务
+  emit() {
+    if (!this.queue.length) return;
     this.queue
       .shift()()
       .then(() => {
-        this.count--;
-        this.request();
+        this.emit();
       });
   }
 }
