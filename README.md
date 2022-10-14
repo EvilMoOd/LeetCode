@@ -70,8 +70,8 @@
 
 #### 学习
 
-- Study：174h（造轮子、钻研学习、看源码）
-- LeetCode：102h
+- Study：175h（造轮子、钻研学习、看源码）
+- LeetCode：105h
 - Blog 44h
 
-- all: 882h
+- all: 886h
