@@ -53,7 +53,7 @@
 
 ### 动态规划
 
-![动态规划.jpg](https://s2.loli.net/2022/09/24/rxgVkPcJbIWEBUz.jpg)
+![动态规划.jpg](https://s2.loli.net/2022/10/18/oSRTFXLHGMdsreE.jpg)
 
 ## 时间记录
 

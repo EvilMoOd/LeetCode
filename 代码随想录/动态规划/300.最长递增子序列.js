@@ -19,7 +19,6 @@ var lengthOfLIS = function (nums) {
       if (nums[j] < nums[i]) dp[i] = Math.max(dp[i], dp[j] + 1);
     }
   }
-  console.log(dp);
   return Math.max(...dp);
 };
 // @lc code=end
