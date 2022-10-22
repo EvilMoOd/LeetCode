@@ -11,33 +11,30 @@
  * @return {number[]}
  */
 var findAnagrams = function (s, p) {
-  const res = []; // 返回值
-  // 记录p中的字母及个数
-  const map = new Map(); // 存储 p 的字符
-  for (let item of p) {
-    map.set(item, map.get(item) ? map.get(item) + 1 : 1);
+  // 建表
+  const map = new Map();
+  for (const i of p) {
+    map.set(i, map.get(i) ? map.get(i) + 1 : 1);
   }
-  // 存储窗口里的字符情况
+  const res = [];
+  // 建窗口
   const window = new Map();
-  let valid = 0; // 有效字符个数
-
-  for (let i = 0; i < s.length; i++) {
-    const right = s[i];
-    // 向右扩展
-    window.set(right, window.get(right) ? window.get(right) + 1 : 1);
-    // 扩展的节点值是否满足有效字符
-    if (window.get(right) === map.get(right)) {
-      valid++;
+  let left = 0,
+    right = 0,
+    valid = 0;
+  while (right < s.length) {
+    // 扩展和判断新的右边界是否有效
+    window.set(s[right], window.get(s[right]) ? window.get(s[right]) + 1 : 1);
+    if (map.get(s[right]) === window.get(s[right])) valid++;
+    right++;
+    // 判断左边界是否有效值且收缩左边界
+    if (right - left > p.length) {
+      if (map.get(s[left]) === window.get(s[left])) valid--;
+      window.set(s[left], window.get(s[left]) - 1);
+      left++;
     }
-    if (i >= p.length) {
-      // 移动窗口 -- 超出之后，收缩回来， 这是 pLen 长度的固定窗口
-      const left = s[i - p.length];
-      // 原本是匹配的，现在移出去了，肯定就不匹配了
-      if (window.get(left) === map.get(left)) valid--;
-      window.set(left, window.get(left) - 1);
-    }
-    // 如果有效字符数量和存储 p 的map 的数量一致，则当前窗口的首字符保存起来
-    if (valid === map.size) res.push(i - p.length + 1);
+    // 判断窗口
+    if (right - left === p.length && valid === map.size) res.push(left);
   }
   return res;
 };

@@ -11,10 +11,11 @@
  * @return {number}
  */
 var minSubArrayLen = function (target, nums) {
-  let left = 0;
+  let left = 0,
+    right = 1;
   let sum = nums[0];
   let res = Infinity;
-  for (let right = 1; right <= nums.length; ) {
+  while (right <= nums.length) {
     if (sum < target) {
       sum += nums[right++];
     } else {
