@@ -20,4 +20,3 @@ var singleNumber = function (nums) {
   return seen_once;
 };
 // @lc code=end
-singleNumber([1, 2, 2, 2]);

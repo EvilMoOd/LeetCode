@@ -26,6 +26,7 @@ var reverseList = function (head) {
     cur = next;
   }
   return pre;
-  // 也是很简单的一道题，需要注意，cur遍历到最后时为null，所以最后返回head或者cur都不对，应该是返回pre，pre才是重构后链表的首元节点
+  // 也是很简单的一道题，双指针反转
+  // 需要注意，cur遍历到最后时为null，所以最后返回head或者cur都不对，应该是返回pre，pre才是重构后链表的首元节点
 };
 // @lc code=end

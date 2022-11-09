@@ -20,18 +20,14 @@ var strStr = function (haystack, needle) {
   const next = new Array(needle.length).fill(0);
   for (let i = 1, j = 0; i < needle.length; i++) {
     // j表示已匹配的前缀指针
-    while (j > 0 && needle[i] !== needle[j]) {
-      j = next[j - 1]; //如果前后缀出现字符不匹配的情况，则缩小前后缀的匹配窗口
-    }
+    while (j > 0 && needle[i] !== needle[j]) j = next[j - 1]; //如果前后缀出现字符不匹配的情况，则缩小前后缀的匹配窗口
     if (needle[i] === needle[j]) j++;
     next[i] = j;
   }
   for (let i = 0, j = 0; i < haystack.length; i++) {
-    while (j > 0 && haystack[i] !== needle[j]) {
-      j = next[j - 1];
-    }
+    while (j > 0 && haystack[i] !== needle[j]) j = next[j - 1];
     if (haystack[i] === needle[j]) j++;
-    if (j === needle.length) return i - j + 1;
+    if (j === needle.length) return i - j + 1; //匹配
   }
   return -1;
 };
