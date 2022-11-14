@@ -18,6 +18,6 @@ var maxSubArray = function (nums) {
     if (sum < 0) sum = 0;
   }
   return max;
-  // 贪心入门
+  // 贪心入门，局部最优，遇负清零
 };
 // @lc code=end
