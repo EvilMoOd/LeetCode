@@ -10,6 +10,7 @@
  * @return {number}
  */
 var integerBreak = function (n) {
+  // 这道题用贪心和dp都非常经典，所以分别用两种方法实现了
   const dp = new Array(n + 1).fill(0);
   dp[2] = 1;
   for (let i = 3; i <= n; i++) {
