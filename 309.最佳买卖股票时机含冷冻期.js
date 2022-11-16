@@ -10,11 +10,8 @@
  * @return {number}
  */
 var maxProfit = function (prices) {
-  if (prices.length === 1) {
-    return 0;
-  } else if (prices.length === 2) {
-    return Math.max(0, prices[1] - prices[0]);
-  }
+  if (prices.length === 1) return 0;
+  else if (prices.length === 2) return Math.max(0, prices[1] - prices[0]);
 
   let dp = Array.from(Array(prices.length), () => Array(4).fill(0));
   dp[0][0] = 0 - prices[0];
