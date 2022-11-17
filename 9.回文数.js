@@ -10,9 +10,7 @@
  * @return {boolean}
  */
 var isPalindrome = function (x) {
-    //反转相等
-    let x2 = parseInt(x.toString().split("").reverse().join(""));
-    return x2===x?true:false
+  //反转相等
+  return +x.toString().split('').reverse().join('') === x;
 };
 // @lc code=end
-
