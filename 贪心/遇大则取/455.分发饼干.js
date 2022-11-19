@@ -11,19 +11,11 @@
  * @return {number}
  */
 var findContentChildren = function (g, s) {
+  g.sort((a, b) => b - a);
+  s.sort((a, b) => b - a);
   let res = 0;
-  g.sort((a, b) => a - b);
-  s.sort((a, b) => a - b);
-  let left = 0,
-    right = 0;
-  while (right !== s.length) {
-    if (g[left] <= s[right]) {
-      res++;
-      left++;
-      right++;
-    } else right++;
-  }
+  for (let i = 0; i < g.length; i++) if (g[i] <= s[res]) res++;
   return res;
-  // 贪心思想，排序双指针，小的饼干给胃口小的人，所以优先排序，然后两根指针遍历数组，统计能喂饱的孩子
+  // 贪心思想，排序然后优先用大的饼干满足胃口大的孩子
 };
 // @lc code=end

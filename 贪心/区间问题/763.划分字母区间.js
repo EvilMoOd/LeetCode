@@ -15,14 +15,12 @@ var partitionLabels = function (s) {
     start = -1,
     end = 0;
   const map = new Map();
-  for (let i in s) {
-    map.set(s[i], i);
-  }
-  for (const i in s) {
+  for (let i in s) map.set(s[i], i);
+  for (let i = 0; i < s.length; i++) {
     end = Math.max(map.get(s[i]), end);
-    if (+i === end) {
-      res.push(+i - start);
-      start = +i;
+    if (i === end) {
+      res.push(i - start);
+      start = i;
     }
   }
   return res;

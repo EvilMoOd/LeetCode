@@ -20,5 +20,6 @@ var eraseOverlapIntervals = function (intervals) {
     else res++;
   }
   return res - 1; //排除遍历时包括自己
+  // 这里用右边界代替数组删除操作，否则会超时
 };
 // @lc code=end

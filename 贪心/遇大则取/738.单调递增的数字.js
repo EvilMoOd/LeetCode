@@ -18,6 +18,6 @@ var monotoneIncreasingDigits = function (n) {
     }
   }
   return arr.join('');
-  // 贪心，如果某一位比前一位小，则该位以及后面全部向下取到9
+  // 贪心，如果某一位比前一位小，则该位以及后面全部向下取到9.不必担心退位问题，因为位上不可能出现比0小的数
 };
 // @lc code=end
