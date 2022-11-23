@@ -10,6 +10,7 @@
  * @return {number}
  */
 var average = function (salary) {
+  // 暴力解决
   const sum = salary.reduce((a, b) => a + b);
   return (
     (sum - Math.max(...salary) - Math.min(...salary)) / (salary.length - 2)

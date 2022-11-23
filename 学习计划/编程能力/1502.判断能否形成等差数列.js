@@ -10,6 +10,7 @@
  * @return {boolean}
  */
 var canMakeArithmeticProgression = function (arr) {
+  // 暴力解决
   arr.sort((a, b) => a - b);
   let cha = arr[1] - arr[0];
   for (let i = 2; i < arr.length; i++)
