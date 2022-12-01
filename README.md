@@ -30,6 +30,7 @@
 #### 实习
 
 - BaiduProject：192h
+- he3：24h
 
 #### 项目
 
@@ -39,7 +40,7 @@
 #### 学习
 
 - Study：187h（造轮子、钻研学习、看源码）
-- LeetCode：221h
-- Blog 44h
+- LeetCode：231h
+- Blog 46h
 
-- all: 1014h
+- all: 1040h
