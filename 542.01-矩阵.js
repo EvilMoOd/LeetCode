@@ -10,6 +10,7 @@
  * @return {number[][]}
  */
 var updateMatrix = function (mat) {
+  // 学习计划算法
   // dp[i][j]代表结果
   // if(mat[i][j] ==1) dp[i][j]等于 1+Math.min(dp[i-1][j],dp[i][j-1],dp[i+1][j].d[i][j+1])
   // else dp[i][j] = 0

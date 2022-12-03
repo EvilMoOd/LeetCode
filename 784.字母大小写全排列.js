@@ -10,6 +10,7 @@
  * @return {string[]}
  */
 var letterCasePermutation = function (s) {
+  // 学习计划算法
   return [...s]
     .map((c) => (/\d/.test(c) ? [c] : [c.toLowerCase(), c.toUpperCase()]))
     .reduce((p, c) => p.map((v) => c.map((b) => v + b)).flat(), ['']);

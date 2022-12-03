@@ -10,6 +10,7 @@
  * @return {number}
  */
 var orangesRotting = function (grid) {
+  // 学习计划算法
   let total = 0,
     rot = 0,
     times = 0,
