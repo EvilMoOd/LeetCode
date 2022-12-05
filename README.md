@@ -25,12 +25,12 @@
 
 ## 时间记录
 
-### WakaTime时长统计(3-21至11-20 35周)  
+### WakaTime时长统计(3-21至12-4 37周)  
 
 #### 实习
 
 - BaiduProject：192h
-- he3：24h
+- he3：56h
 
 #### 项目
 
@@ -40,7 +40,7 @@
 #### 学习
 
 - Study：187h（造轮子、钻研学习、看源码）
-- LeetCode：231h
+- LeetCode：237h
 - Blog 46h
 
-- all: 1040h
+- all: 1078h
