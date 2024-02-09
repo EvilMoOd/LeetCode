@@ -17,11 +17,11 @@
 
 ## 数据结构
 
-![数据结构.png](https://s2.loli.net/2022/10/25/C3OkwaJW9MdItiq.png)
+![数据结构](https://github.com/EvilMoOd/LeetCode/assets/98245255/17e20377-b374-4e12-b08e-a99ad1a923e4)
 
 ## 算法
 
-![算法.png](https://s2.loli.net/2022/10/25/rktIARTyh5xJBpC.png)
+![算法](https://github.com/EvilMoOd/LeetCode/assets/98245255/ebcc524b-df69-41e9-97a8-d01535c65e6a)
 
 ## 时间记录
 
